@@ -16,15 +16,15 @@ namespace view
 
     void Menu::show()
     {
-      cout << "x--------------------------------x" << endl;
-      cout << "|                                |" << endl;
-      cout << "|  0 - Sair do bloco de notas;   |" << endl;
-      cout << "|                                |" << endl;
-      cout << "|  1 - Criar uma nova nota;      |" << endl;
-      cout << "|                                |" << endl;
-      cout << "|  2 - Listar as notas;          |" << endl;
-      cout << "|                                |" << endl;
-      cout << "x--------------------------------x" << endl
+      cout << "x------------------------------------x" << endl;
+      cout << "|                                    |" << endl;
+      cout << "|  0 - Sair do bloco de notas;       |" << endl;
+      cout << "|                                    |" << endl;
+      cout << "|  1 - Criar uma nova anotação;      |" << endl;
+      cout << "|                                    |" << endl;
+      cout << "|  2 - Listar as anotação;           |" << endl;
+      cout << "|                                    |" << endl;
+      cout << "x------------------------------------x" << endl
            << endl;
       cout << "Selecione a opção desejada: ";
       cin >> option;

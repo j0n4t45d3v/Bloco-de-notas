@@ -4,11 +4,11 @@
 #include <iostream>
 
 using namespace std;
-using namespace view;
+using namespace view::notepadd;
 
 int main()
 {
-  notepadd::Menu menuNotpad;
+  Menu menuNotpad;
   connection::Database *con = connection::Database::getInstance();
   short option;
   bool exitSystem = false;
