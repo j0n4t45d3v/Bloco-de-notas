@@ -2,6 +2,9 @@
 #define NOTEPADD_H
 
 #include <sqlite3.h>
+#include "../app/note.h"
+
+using namespace app::notepadd;
 
 namespace view
 {
@@ -10,10 +13,11 @@ namespace view
     class Notepadd 
     {
       private:
-        sqlite3* connection;
+        Note* note;
       public:
         Notepadd(sqlite3* connection);
         void create();
+        void list();
     };
   }
 }

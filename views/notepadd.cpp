@@ -11,7 +11,7 @@ namespace view
   {
     Notepadd::Notepadd(sqlite3* connection) 
     {
-      Notepadd::connection = connection;
+      Notepadd::note = new Note(connection);
     }
     void Notepadd::create() 
     {
@@ -22,8 +22,13 @@ namespace view
       getline(cin, noteTitle, '\n');
       cout << "Escreva o conteudo da anotação: ";
       getline(cin, content, '\n');
-      Note* note = new Note(Notepadd::connection);
-      note->createNote(noteTitle, content);
+      
+      Notepadd::note->createNote(noteTitle, content);
+    }
+
+    void Notepadd::list() 
+    {
+      Notepadd::note->listNotes();
     }
   }
 }

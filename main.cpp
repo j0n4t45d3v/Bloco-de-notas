@@ -14,8 +14,6 @@ int main()
   short option;
   bool exitSystem = false;
 
-
-
   if (con != nullptr)
   {
     sqlite3 *db = con->getConnection();
@@ -31,10 +29,14 @@ int main()
         case 1:
           notepaddView->create();
           break;
+        case 2:
+          notepaddView->list();
+          break;
         case 0: 
           exitSystem = true;
+          break;
         default:
-          exitSystem = true;
+          cout << "Opção inválida" << endl;
       }
 
       if (option == 0)

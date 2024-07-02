@@ -16,6 +16,7 @@ namespace app
       public:
         Note(sqlite3* connection);
         bool createNote(std::string noteTitle, std::string content); 
+        void listNotes();
     };
   }  
 }

@@ -29,8 +29,24 @@ namespace app
       return true;
     }
 
+    void Note::listNotes()
+    {
+      sqlite3_stmt* stmt;
+      const char* sql = "SELECT id, title FROM notepadd";
+      sqlite3_prepare(connection, sql, -1, &stmt, NULL);
+      cout << "x=================== Anotações ======================x" << endl;
+      while(sqlite3_step(stmt) == SQLITE_ROW) {
+        int id = sqlite3_column_int(stmt, 0);
+        const unsigned char* title = sqlite3_column_text(stmt, 1);
+        cout << "\t" << id << " - " << title << endl;
+      }
+      cout << "x====================================================x" << endl;
+      sqlite3_finalize(stmt);
+    }
+
     string Note::formateData(std::string value)
     {
+      if(value == "") return "'*Sem titulo'";
       return string("'") + value + string("'");
     }
   }
